@@ -16,11 +16,7 @@ class Braces
       else
         if(balance_stack.length == 0)
           return false
-        elsif(@braces_string[i] == '}' && balance_stack[balance_stack.length - 1] == '{')
-          balance_stack.pop
-        elsif(@braces_string[i] == ')' && balance_stack[balance_stack.length - 1] == '(')
-          balance_stack.pop
-        elsif(@braces_string[i] == ']' && balance_stack[balance_stack.length - 1] == '[')
+        elsif((@braces_string[i] == '}' && balance_stack[balance_stack.length - 1] == '{') || (@braces_string[i] == ')' && balance_stack[balance_stack.length - 1] == '(') || (@braces_string[i] == ']' && balance_stack[balance_stack.length - 1] == '['))
           balance_stack.pop()
         else
           return false
