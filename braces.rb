@@ -15,9 +15,13 @@ class Braces
         balance_stack.push(@braces_string[i])
       else
           if( balance_stack.length == 0 )
-              return false
-          elsif((@braces_string[i] == '}' && balance_stack[balance_stack.length - 1] == '{') || (@braces_string[i] == ')' && balance_stack[balance_stack.length - 1] == '(') || (@braces_string[i] == ']' && balance_stack[balance_stack.length - 1] == '['))
-              balance_stack.pop()
+            return false
+          elsif(@braces_string[i] == '}' && balance_stack[balance_stack.length - 1] == '{')
+            balance_stack.pop
+          elsif(@braces_string[i] == ')' && balance_stack[balance_stack.length - 1] == '(')
+            balance_stack.pop
+          elsif(@braces_string[i] == ']' && balance_stack[balance_stack.length - 1] == '[')
+            balance_stack.pop()
           else
             return false
           end
